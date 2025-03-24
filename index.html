@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greeting Card Flip</title>
     <style>
+        /* Starry Sky Background */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f5f5f5;
+            background: url('https://vinsweb.org/wp-content/uploads/2020/04/AtHome-NightSky-1080x810-1.jpg') no-repeat center center/cover;
             margin: 0;
+            overflow: hidden;
             position: relative;
         }
 
+        /* Card Container */
         .card {
             width: 300px;
             height: 400px;
@@ -23,8 +26,9 @@
             position: relative;
         }
 
+        /* Inner Card */
         .card-inner {
-            width: 200%;
+            width: 100%;
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
@@ -35,17 +39,21 @@
             transform: rotateY(180deg);
         }
 
+        /* Front & Back */
         .card-front, .card-back {
             width: 100%;
             height: 100%;
             position: absolute;
             backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
         }
 
         .card-front img, .card-back img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 10px;
         }
 
         .card-back {
@@ -55,7 +63,7 @@
         /* Rotation Icon */
         .rotate-icon {
             position: absolute;
-            right: -400px;
+            right: -50px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
@@ -65,6 +73,7 @@
         .rotate-icon img {
             width: 40px;
             height: 40px;
+            filter: drop-shadow(0 0 5px white);
         }
 
         @keyframes rotate {
